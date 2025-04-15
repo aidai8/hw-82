@@ -16,3 +16,16 @@ export interface Album {
 }
 
 export type AlbumWithoutId = Omit<Album, '_id'>;
+
+export interface Track {
+    _id: string;
+    track_name: string;
+    album: string | Album;
+    duration: string;
+}
+
+export type TrackWithoutId = Omit<Track, '_id'>;
+
+export interface TrackFilter {
+  album?: mongoose.Types.ObjectId | string;
+}

@@ -13,6 +13,10 @@ const TrackSchema = new mongoose.Schema({
     duration: {
         type: String,
         required: [true, 'Duration is required'],
+        validate: {
+            validator: (value: string) => /^(\d{1,2}):(\d{2})$/.test(value),
+            message: "Duration must be in format MM:SS or H:MM",
+        },
     }
 });
 
