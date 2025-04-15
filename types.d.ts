@@ -6,3 +6,13 @@ export interface Artist {
 }
 
 export type ArtistWithoutId = Omit<Artist, '_id'>;
+
+export interface Album {
+    _id: string;
+    album_name: string;
+    artist: string | Artist;
+    year: number;
+    image: string | null;
+}
+
+export type AlbumWithoutId = Omit<Album, '_id'>;
