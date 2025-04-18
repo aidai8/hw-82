@@ -29,3 +29,9 @@ export type TrackWithoutId = Omit<Track, '_id'>;
 export interface TrackFilter {
   album?: mongoose.Types.ObjectId | string;
 }
+
+export interface UserFields {
+    username: string;
+    password: string;
+    token: string;
+}
